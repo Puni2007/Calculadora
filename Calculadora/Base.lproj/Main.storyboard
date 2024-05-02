@@ -31,9 +31,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="AC">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorACAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2it-xZ-zAA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgb-oQ-8gr">
                                                 <rect key="frame" x="92.666666666666686" y="0.0" width="75" height="74.666666666666671"/>
@@ -43,9 +46,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="+/-">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorMasMenosAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="beI-Aq-FXg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-Vo-v6Y">
                                                 <rect key="frame" x="185.66666666666666" y="0.0" width="74.666666666666657" height="74.666666666666671"/>
@@ -55,9 +61,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="%">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorPorcentajeAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xkj-C8-iD7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-o5-hel">
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="74.666666666666671"/>
@@ -67,9 +76,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="/">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorDividirAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E2g-wv-1Tf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -81,7 +93,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="vk5-vo-opu">
                                         <rect key="frame" x="0.0" y="92.666666666666686" width="353" height="74.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAB-er-cpo">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAB-er-cpo">
                                                 <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -89,11 +101,14 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="7">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oRE-jv-Zcc"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cni-x6-Qg1">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cni-x6-Qg1">
                                                 <rect key="frame" x="92.666666666666686" y="0.0" width="75" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -101,11 +116,14 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="8">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNQ-jg-VHn"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-ph-LEm">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-ph-LEm">
                                                 <rect key="frame" x="185.66666666666666" y="0.0" width="74.666666666666657" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -113,9 +131,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="9">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zu9-Xr-RPR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9i3-oq-K2e">
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="74.666666666666671"/>
@@ -125,9 +146,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="X">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorMultiplicarAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rg3-pN-k8Z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -139,7 +163,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6cN-hl-EVi">
                                         <rect key="frame" x="0.0" y="185.33333333333331" width="353" height="75"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekj-QQ-stD">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekj-QQ-stD">
                                                 <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="75"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -147,11 +171,14 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="4">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="78T-E8-QPF"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fT6-Zo-LG1">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fT6-Zo-LG1">
                                                 <rect key="frame" x="92.666666666666686" y="0.0" width="75" height="75"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -159,11 +186,14 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="5">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mff-QD-buM"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmG-bV-onZ">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmG-bV-onZ">
                                                 <rect key="frame" x="185.66666666666666" y="0.0" width="74.666666666666657" height="75"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -171,9 +201,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="6">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f06-bE-hyt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7z-ZE-sVU">
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="75"/>
@@ -183,9 +216,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="-">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorRestarAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVP-Yk-vbQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -197,7 +233,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-Wj-LAe">
                                         <rect key="frame" x="0.0" y="278.33333333333331" width="353" height="74.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-U8-alu">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-U8-alu">
                                                 <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -205,11 +241,14 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="1">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2R0-PU-x4r"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cm-vW-PKH">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cm-vW-PKH">
                                                 <rect key="frame" x="92.666666666666686" y="0.0" width="75" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -217,11 +256,14 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="2">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xaP-6C-Vek"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHO-Zn-9cY">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHO-Zn-9cY">
                                                 <rect key="frame" x="185.66666666666666" y="0.0" width="74.666666666666657" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -229,9 +271,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="3">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wS3-ZX-f8O"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hy-PP-OTf">
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="74.666666666666671"/>
@@ -241,9 +286,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="+">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="operadorSumarAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5OO-oU-mXr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -263,9 +311,12 @@
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="0">
-                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="accionNumeros:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yW7-G7-FWI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -280,7 +331,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title=",">
-                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
@@ -292,9 +343,12 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="=">
-                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="operadorResultadoAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3cF-od-gug"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -320,6 +374,27 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j7z-Qc-CaX" secondAttribute="trailing" constant="20" id="ww0-IV-eLr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="muestraResultado" destination="bz1-ME-BV4" id="Zl2-cX-5lD"/>
+                        <outlet property="numero0" destination="ByT-1F-cwG" id="INV-20-Qeb"/>
+                        <outlet property="numero1" destination="jbf-U8-alu" id="Uy3-PW-gtE"/>
+                        <outlet property="numero2" destination="2Cm-vW-PKH" id="lSd-8M-BZb"/>
+                        <outlet property="numero3" destination="jHO-Zn-9cY" id="h9H-Zz-Yc3"/>
+                        <outlet property="numero4" destination="Ekj-QQ-stD" id="gqb-OP-xJ6"/>
+                        <outlet property="numero5" destination="fT6-Zo-LG1" id="5HW-5Y-ZNd"/>
+                        <outlet property="numero6" destination="zmG-bV-onZ" id="ycR-7C-v7G"/>
+                        <outlet property="numero7" destination="kAB-er-cpo" id="WkY-Yw-7As"/>
+                        <outlet property="numero8" destination="Cni-x6-Qg1" id="PXh-U6-4wV"/>
+                        <outlet property="numero9" destination="aCM-ph-LEm" id="Xux-99-bd5"/>
+                        <outlet property="operadorAC" destination="cFx-kG-WmO" id="apZ-q1-8LH"/>
+                        <outlet property="operadorDividir" destination="fmQ-o5-hel" id="Wh5-eE-Mcp"/>
+                        <outlet property="operadorMasMenos" destination="Wgb-oQ-8gr" id="u9J-XL-4SH"/>
+                        <outlet property="operadorMultiplicar" destination="9i3-oq-K2e" id="YhO-OQ-iU9"/>
+                        <outlet property="operadorPorcentaje" destination="tDc-Vo-v6Y" id="6N2-mt-r5S"/>
+                        <outlet property="operadorRestar" destination="O7z-ZE-sVU" id="5TE-8v-Y4i"/>
+                        <outlet property="operadorResultado" destination="bFE-8O-1oS" id="4ur-gv-JE7"/>
+                        <outlet property="operadorSumar" destination="5Hy-PP-OTf" id="fof-nz-h0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
