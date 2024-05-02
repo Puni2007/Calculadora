@@ -8,6 +8,25 @@
 import UIKit
 
 class Calculadora: UIViewController {
+    
+    //Variables
+    private var total: Double = 0
+    private var temporal: Double = 0
+    private var operador = false
+    private var decimal = false
+    private var operacion: tipoOperacion = .ninguna
+    
+    private let separadorDecimal = Locale.current.decimalSeparator
+    private let valorMax: Double = 999999999
+    
+    private enum tipoOperacion {
+        case ninguna
+        case sumar
+        case restar
+        case multiplicar
+        case dividir
+        case porcentaje
+    }
 
     //Label resultado
     @IBOutlet weak var muestraResultado: UILabel!
@@ -37,6 +56,7 @@ class Calculadora: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     //Acciones
@@ -44,24 +64,29 @@ class Calculadora: UIViewController {
         
     }
     @IBAction func operadorMasMenosAccion(_ sender: UIButton) {
-        
+       
     }
     @IBAction func operadorPorcentajeAccion(_ sender: UIButton) {
+       
         
     }
     @IBAction func operadorDividirAccion(_ sender: UIButton) {
+       
         
     }
     
     @IBAction func operadorMultiplicarAccion(_ sender: UIButton) {
         
+        
     }
     
     @IBAction func operadorRestarAccion(_ sender: UIButton) {
         
+        
     }
     
     @IBAction func operadorSumarAccion(_ sender: UIButton) {
+        
         
     }
     
@@ -74,8 +99,51 @@ class Calculadora: UIViewController {
         
     }
     
+    @IBAction func accionDecimal(_ sender: Any) {
+       
+        
+        
+    }
+    
     //Funciones
     
+    private func borrar() {
+        operacion = .ninguna
+        operadorAC.setTitle("AC", for: .normal)
+        if temporal != 0 {
+            temporal = 0
+            muestraResultado.text = "0"
+        } else {
+            total = 0
+            resultadoFinal()
+        }
+    }
+    
+    private func resultadoFinal() {
+        switch operacion {
+        case .ninguna:
+            //no hacemos nada
+            break
+        case .sumar:
+            total = total + temporal
+            break
+        case .restar:
+            total = total - temporal
+            break
+        case .multiplicar:
+            total = total * temporal
+            break
+        case .dividir:
+            total = total / temporal
+            break
+        case .porcentaje:
+            temporal = temporal / 100
+            total = temporal
+            break
+        }
+        
+        muestraResultado.text = String(total)
+    }
 
 }
 
