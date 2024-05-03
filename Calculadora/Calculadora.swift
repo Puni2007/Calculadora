@@ -10,16 +10,16 @@ import UIKit
 class Calculadora: UIViewController {
     
     //Variables
-    private var total: Double = 0
-    private var temporal: Double = 0
+    private var total = 0
+    private var temporal = 0
     private var operador = false
     private var decimal = false
-    private var operacion: tipoOperacion = .ninguna
+    private var operacion: TipoOperacion = .ninguna
     
     private let separadorDecimal = Locale.current.decimalSeparator
-    private let valorMax: Double = 999999999
+    private let valoresMax = 9
     
-    private enum tipoOperacion {
+    private enum TipoOperacion {
         case ninguna
         case sumar
         case restar
@@ -61,41 +61,76 @@ class Calculadora: UIViewController {
     
     //Acciones
     @IBAction func operadorACAccion(_ sender: UIButton) {
-        
+        borrar()
     }
     @IBAction func operadorMasMenosAccion(_ sender: UIButton) {
-       
+        temporal = temporal * (-1)
+        muestraResultado.text = String(temporal)
     }
     @IBAction func operadorPorcentajeAccion(_ sender: UIButton) {
-       
+        operador = true
+        operacion = .porcentaje
+        resultadoFinal()
         
     }
     @IBAction func operadorDividirAccion(_ sender: UIButton) {
+        
+        operador = true
+        operacion = .dividir
        
         
     }
     
     @IBAction func operadorMultiplicarAccion(_ sender: UIButton) {
         
+        operador = true
+        operacion = .multiplicar
         
     }
     
     @IBAction func operadorRestarAccion(_ sender: UIButton) {
         
+        operador = true
+        operacion = .restar
         
     }
     
     @IBAction func operadorSumarAccion(_ sender: UIButton) {
         
+        operador = true
+        operacion = .sumar
         
     }
     
     @IBAction func operadorResultadoAccion(_ sender: UIButton) {
-        
+        resultadoFinal()
     }
     
     @IBAction func accionNumeros(_ sender: UIButton) {
+        let numero = sender.tag
+       
+        operadorAC.setTitle("C", for: .normal)
+        var temporalActual = muestraResultado.text ?? ""
         
+        if temporalActual == "0" {
+            temporalActual.removeAll()
+        }
+        
+        if !operador && temporalActual.count >= valoresMax {
+            return
+        }
+        
+        if operador {
+            total = total == 0 ? temporal : total
+            muestraResultado.text = ""
+            temporalActual = ""
+            operador = false
+        }
+        
+        temporal = Int(temporalActual + String(numero))!
+        muestraResultado.text = String(temporal)
+        
+        print("TemporalActual: \(temporalActual)")
         
     }
     
@@ -143,6 +178,8 @@ class Calculadora: UIViewController {
         }
         
         muestraResultado.text = String(total)
+        
+        print("Total: \(total) Temporal: \(temporal)")
     }
 
 }
