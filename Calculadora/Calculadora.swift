@@ -127,8 +127,12 @@ class Calculadora: UIViewController {
             operador = false
         }
         
-        temporal = Int(temporalActual + String(numero))!
-        muestraResultado.text = String(temporal)
+        if let resultado = Int(temporalActual + String(numero)) {
+            temporal = resultado
+            muestraResultado.text = String(resultado)
+        }
+        
+        
         
         print("TemporalActual: \(temporalActual)")
         
@@ -183,4 +187,3 @@ class Calculadora: UIViewController {
     }
 
 }
-
