@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -58,6 +57,7 @@
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tDc-Vo-v6Y" secondAttribute="height" multiplier="1:1" id="7mh-2G-4NA"/>
+                                                    <constraint firstAttribute="width" secondItem="tDc-Vo-v6Y" secondAttribute="height" multiplier="1:1" id="BwW-M2-86J"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="%">
@@ -72,6 +72,7 @@
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="74.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="fmQ-o5-hel" secondAttribute="height" multiplier="1:1" id="F6U-yy-5rW"/>
                                                     <constraint firstAttribute="width" secondItem="fmQ-o5-hel" secondAttribute="height" multiplier="1:1" id="yl4-Av-4Mx"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
@@ -86,8 +87,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Wgb-oQ-8gr" firstAttribute="leading" secondItem="cFx-kG-WmO" secondAttribute="trailing" constant="18" id="0cL-Le-PZ7"/>
-                                            <constraint firstItem="tDc-Vo-v6Y" firstAttribute="width" secondItem="tDc-Vo-v6Y" secondAttribute="height" multiplier="1:1" id="BwW-M2-86J"/>
-                                            <constraint firstItem="fmQ-o5-hel" firstAttribute="width" secondItem="fmQ-o5-hel" secondAttribute="height" multiplier="1:1" id="F6U-yy-5rW"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="vk5-vo-opu">
@@ -128,6 +127,7 @@
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aCM-ph-LEm" secondAttribute="height" multiplier="1:1" id="FTk-Yc-PCB"/>
+                                                    <constraint firstAttribute="width" secondItem="aCM-ph-LEm" secondAttribute="height" multiplier="1:1" id="hgG-Ac-KZ4"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="9">
@@ -143,6 +143,7 @@
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9i3-oq-K2e" secondAttribute="height" multiplier="1:1" id="Jzt-Fy-kDq"/>
+                                                    <constraint firstAttribute="width" secondItem="9i3-oq-K2e" secondAttribute="height" multiplier="1:1" id="S19-mh-UzG"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="X">
@@ -156,8 +157,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Cni-x6-Qg1" firstAttribute="leading" secondItem="kAB-er-cpo" secondAttribute="trailing" constant="18" id="7wQ-h7-umS"/>
-                                            <constraint firstItem="9i3-oq-K2e" firstAttribute="width" secondItem="9i3-oq-K2e" secondAttribute="height" multiplier="1:1" id="S19-mh-UzG"/>
-                                            <constraint firstItem="aCM-ph-LEm" firstAttribute="width" secondItem="aCM-ph-LEm" secondAttribute="height" multiplier="1:1" id="hgG-Ac-KZ4"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6cN-hl-EVi">
@@ -198,6 +197,7 @@
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zmG-bV-onZ" secondAttribute="height" multiplier="1:1" id="bda-pA-lE1"/>
+                                                    <constraint firstAttribute="width" secondItem="zmG-bV-onZ" secondAttribute="height" multiplier="1:1" id="y1A-vW-Bcj"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="6">
@@ -212,6 +212,7 @@
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="75"/>
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="O7z-ZE-sVU" secondAttribute="height" multiplier="1:1" id="TMj-w2-q1a"/>
                                                     <constraint firstAttribute="width" secondItem="O7z-ZE-sVU" secondAttribute="height" multiplier="1:1" id="dEH-Q6-Czx"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
@@ -225,9 +226,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="O7z-ZE-sVU" firstAttribute="width" secondItem="O7z-ZE-sVU" secondAttribute="height" multiplier="1:1" id="TMj-w2-q1a"/>
                                             <constraint firstItem="fT6-Zo-LG1" firstAttribute="leading" secondItem="Ekj-QQ-stD" secondAttribute="trailing" constant="18" id="dma-zD-CCS"/>
-                                            <constraint firstItem="zmG-bV-onZ" firstAttribute="width" secondItem="zmG-bV-onZ" secondAttribute="height" multiplier="1:1" id="y1A-vW-Bcj"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-Wj-LAe">
@@ -267,6 +266,7 @@
                                                 <rect key="frame" x="185.66666666666666" y="0.0" width="74.666666666666657" height="74.666666666666671"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jHO-Zn-9cY" secondAttribute="height" multiplier="1:1" id="Sd2-VW-yDl"/>
                                                     <constraint firstAttribute="width" secondItem="jHO-Zn-9cY" secondAttribute="height" multiplier="1:1" id="rFM-eO-AnD"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
@@ -282,6 +282,7 @@
                                                 <rect key="frame" x="278.33333333333331" y="0.0" width="74.666666666666686" height="74.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5Hy-PP-OTf" secondAttribute="height" multiplier="1:1" id="Jtx-wM-hyf"/>
                                                     <constraint firstAttribute="width" secondItem="5Hy-PP-OTf" secondAttribute="height" multiplier="1:1" id="mAf-mZ-HJZ"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
@@ -295,8 +296,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="5Hy-PP-OTf" firstAttribute="width" secondItem="5Hy-PP-OTf" secondAttribute="height" multiplier="1:1" id="Jtx-wM-hyf"/>
-                                            <constraint firstItem="jHO-Zn-9cY" firstAttribute="width" secondItem="jHO-Zn-9cY" secondAttribute="height" multiplier="1:1" id="Sd2-VW-yDl"/>
                                             <constraint firstItem="2Cm-vW-PKH" firstAttribute="leading" secondItem="jbf-U8-alu" secondAttribute="trailing" constant="18" id="dNX-qw-ZSb"/>
                                         </constraints>
                                     </stackView>
@@ -379,24 +378,8 @@
                     </view>
                     <connections>
                         <outlet property="muestraResultado" destination="bz1-ME-BV4" id="Zl2-cX-5lD"/>
-                        <outlet property="numero0" destination="ByT-1F-cwG" id="INV-20-Qeb"/>
-                        <outlet property="numero1" destination="jbf-U8-alu" id="Uy3-PW-gtE"/>
-                        <outlet property="numero2" destination="2Cm-vW-PKH" id="lSd-8M-BZb"/>
-                        <outlet property="numero3" destination="jHO-Zn-9cY" id="h9H-Zz-Yc3"/>
-                        <outlet property="numero4" destination="Ekj-QQ-stD" id="gqb-OP-xJ6"/>
-                        <outlet property="numero5" destination="fT6-Zo-LG1" id="5HW-5Y-ZNd"/>
-                        <outlet property="numero6" destination="zmG-bV-onZ" id="ycR-7C-v7G"/>
-                        <outlet property="numero7" destination="kAB-er-cpo" id="WkY-Yw-7As"/>
-                        <outlet property="numero8" destination="Cni-x6-Qg1" id="PXh-U6-4wV"/>
-                        <outlet property="numero9" destination="aCM-ph-LEm" id="Xux-99-bd5"/>
+                        <outlet property="numeroDecimal" destination="KFT-nu-cxs" id="mLz-cU-cEL"/>
                         <outlet property="operadorAC" destination="cFx-kG-WmO" id="apZ-q1-8LH"/>
-                        <outlet property="operadorDividir" destination="fmQ-o5-hel" id="Wh5-eE-Mcp"/>
-                        <outlet property="operadorMasMenos" destination="Wgb-oQ-8gr" id="u9J-XL-4SH"/>
-                        <outlet property="operadorMultiplicar" destination="9i3-oq-K2e" id="YhO-OQ-iU9"/>
-                        <outlet property="operadorPorcentaje" destination="tDc-Vo-v6Y" id="6N2-mt-r5S"/>
-                        <outlet property="operadorRestar" destination="O7z-ZE-sVU" id="5TE-8v-Y4i"/>
-                        <outlet property="operadorResultado" destination="bFE-8O-1oS" id="4ur-gv-JE7"/>
-                        <outlet property="operadorSumar" destination="5Hy-PP-OTf" id="fof-nz-h0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -406,10 +389,10 @@
     </scenes>
     <resources>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
