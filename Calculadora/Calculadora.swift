@@ -9,19 +9,21 @@ import UIKit
 
 class Calculadora: UIViewController {
     
-    //Variables
+    // MARK: - Variables
     private var total: Float = 0
     private var temporal: Float = 0
-    private var contadorComas = false
+    private var pulsadoComa = false
     private var operador = false
     private var resultado = false
     private var decimal = false
     private var operacion: TipoOperacion = .ninguna
     
+    // MARK: - Constantes
     private let separadorDecimal = Locale.current.decimalSeparator
     private let digitosMax = 9
     private let valorMax: Float = 999999999.0
     
+    // MARK: - Enums
     private enum TipoOperacion {
         case ninguna
         case sumar
@@ -30,26 +32,72 @@ class Calculadora: UIViewController {
         case dividir
         case porcentaje
     }
-
-    //Label resultado
-    @IBOutlet weak var muestraResultado: UILabel!
     
-    //Operadores
+    private enum Constants: String {
+        case firstDecimal = "0,"
+        case zero = "0"
+        case clean = "C"
+        case colon = ","
+        case point = "."
+        case pointZero = ".0"
+        case noPosible = "No posible"
+        case cleanAC = "AC"
+    }
+
+    // MARK: - Outlets
+    @IBOutlet weak var muestraResultado: UILabel!
     @IBOutlet weak var operadorAC: UIButton!
     @IBOutlet weak var numeroDecimal: UIButton!
+    @IBOutlet weak var operadorMasMenos: UIButton!
+    @IBOutlet weak var operadorDividir: UIButton!
+    @IBOutlet weak var operadorPorcentaje: UIButton!
+    @IBOutlet weak var operadorMultiplicar: UIButton!
+    @IBOutlet weak var operadorRestar: UIButton!
+    @IBOutlet weak var operadorSumar: UIButton!
+    @IBOutlet weak var operadorIgual: UIButton!
+    @IBOutlet weak var numero0: UIButton!
+    @IBOutlet weak var numero1: UIButton!
+    @IBOutlet weak var numero2: UIButton!
+    @IBOutlet weak var numero3: UIButton!
+    @IBOutlet weak var numero4: UIButton!
+    @IBOutlet weak var numero5: UIButton!
+    @IBOutlet weak var numero6: UIButton!
+    @IBOutlet weak var numero7: UIButton!
+    @IBOutlet weak var numero8: UIButton!
+    @IBOutlet weak var numero9: UIButton!
     
+    // MARK: - Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        operadorAC.layer.cornerRadius = 35
+        numeroDecimal.layer.cornerRadius = 35
+        operadorMasMenos.layer.cornerRadius = 35
+        operadorDividir.layer.cornerRadius = 35
+        operadorPorcentaje.layer.cornerRadius = 35
+        operadorMultiplicar.layer.cornerRadius = 35
+        operadorRestar.layer.cornerRadius = 35
+        operadorSumar.layer.cornerRadius = 35
+        operadorIgual.layer.cornerRadius = 35
+        numero0.layer.cornerRadius = 35
+        numero1.layer.cornerRadius = 35
+        numero2.layer.cornerRadius = 35
+        numero3.layer.cornerRadius = 35
+        numero4.layer.cornerRadius = 35
+        numero5.layer.cornerRadius = 35
+        numero6.layer.cornerRadius = 35
+        numero7.layer.cornerRadius = 35
+        numero8.layer.cornerRadius = 35
+        numero9.layer.cornerRadius = 35
     }
     
-    //Acciones
+    // MARK: - Acciones
     @IBAction func operadorACAccion(_ sender: UIButton) {
         borrar()
     }
+    
     @IBAction func operadorMasMenosAccion(_ sender: UIButton) {
-        muestraResultado.text = muestraResultado.text?.replacingOccurrences(of: ",", with: ".")
+        muestraResultado.text = muestraResultado.text?.replacingOccurrences(of: Constants.colon.rawValue, with: Constants.point.rawValue)
         cambioSigno()
     }
     
@@ -58,30 +106,25 @@ class Calculadora: UIViewController {
         operacion = .porcentaje
         resultadoFinal()
     }
+    
     @IBAction func operadorDividirAccion(_ sender: UIButton) {
         operador = true
         operacion = .dividir
     }
     
     @IBAction func operadorMultiplicarAccion(_ sender: UIButton) {
-        
         operador = true
         operacion = .multiplicar
-        
     }
     
     @IBAction func operadorRestarAccion(_ sender: UIButton) {
-        
         operador = true
         operacion = .restar
-        
     }
     
     @IBAction func operadorSumarAccion(_ sender: UIButton) {
-        
         operador = true
         operacion = .sumar
-        
     }
     
     @IBAction func operadorResultadoAccion(_ sender: UIButton) {
@@ -90,38 +133,40 @@ class Calculadora: UIViewController {
     }
     
     @IBAction func accionDecimal(_ sender: Any) {
-        
-        if contadorComas || resultado {
+        if pulsadoComa {
             return
+        } else if resultado {
+            muestraResultado.text = Constants.firstDecimal.rawValue
+            resultado = false
+            decimal = true
         } else {
             decimal = true
             if let decimal = separadorDecimal, let numeroDecimal = muestraResultado.text {
-               
                 muestraResultado.text = numeroDecimal + decimal
             }
         }
-        
-        
     }
     
     @IBAction func accionNumeros(_ sender: UIButton) {
-        
         let numero = sender.tag
-       
-        operadorAC.titleLabel?.text = "C"
+        operadorAC.titleLabel?.text = Constants.clean.rawValue
         
-        if resultado && !operador{
+        if resultado && !operador {
             //Si hemos pulsado la tecla resultado y no activamos ningún operador, resetamos total para nueva operacion con el nuevo número
             muestraResultado.text = String(numero)
             temporal = Float(numero)
             total = 0
             resultado = false
+           
         } else {
             if var temporalActual = muestraResultado.text {
+                if temporalActual == Constants.firstDecimal.rawValue {
+                    comprobarCeroComa(temporalActual: temporalActual, numero: numero)
+                }
                 
-                temporalActual = temporalActual.replacingOccurrences(of: ",", with: ".")
+                temporalActual = temporalActual.replacingOccurrences(of: Constants.colon.rawValue, with: Constants.point.rawValue)
             
-                if temporalActual == "0" {
+                if temporalActual == Constants.zero.rawValue {
                     temporalActual.removeAll()
                 }
                 
@@ -131,57 +176,48 @@ class Calculadora: UIViewController {
                 
                 if operador {
                     total = total == 0 ? temporal : total
-                    //muestraResultado.text = ""
                     temporalActual = ""
                     operador = false
-                    print(total)
                 }
                 
                 if decimal {
-                    //temporalActual = temporalActual.replacingOccurrences(of: ",", with: ".")
-                    
                     if let resultado = Float(temporalActual + String(numero)) {
                         temporal = resultado
                         muestraResultado.text = String(temporal)
                     }
-                    
-                    contadorComas = true
+                    pulsadoComa = true
                     decimal = false
                 }
                
                 if let resultado = Float(temporalActual + String(numero)) {
                     temporal = resultado
                     var resultadoString = String(resultado)
-                    if !decimal{
-                        //let contieneDecimal = resultadoString.hasSuffix(".0")
-                        resultadoString = resultadoString.replacingOccurrences(of: ".0", with: "")
-                        
-                    }
-                    resultadoString = resultadoString.replacingOccurrences(of: ".", with: ",")
                     
+                    if !decimal {
+                        resultadoString = resultadoString.replacingOccurrences(of: Constants.pointZero.rawValue, with: "")
+                    }
+                    
+                    resultadoString = resultadoString.replacingOccurrences(of: Constants.point.rawValue, with: Constants.colon.rawValue)
                     muestraResultado.text = resultadoString
                 }
-                
+            
                 resultado = false
-                
-                print("TemporalActual: \(temporalActual)")
             }
         }
     }
     
-    
-    
-    //Funciones
+    // MARK: - Funciones
     
     private func borrar() {
         operacion = .ninguna
         resultado = false
         decimal = false
-        contadorComas = false
-        operadorAC.titleLabel?.text = "AC"
+        pulsadoComa = false
+        operadorAC.titleLabel?.text = Constants.cleanAC.rawValue
+        
         if temporal != 0 {
             temporal = 0
-            muestraResultado.text = "0"
+            muestraResultado.text = Constants.zero.rawValue
         } else {
             total = 0
             resultadoFinal()
@@ -220,35 +256,40 @@ class Calculadora: UIViewController {
             } else {
                 total = total / 100
             }
-            
+            operador = false
             break
         }
         
         if total >= valorMax {
-            muestraResultado.text = "No posible"
-            
+            muestraResultado.text = Constants.noPosible.rawValue
         } else {
             cambiarPuntoComa()
         }
         
-        contadorComas = false
-        
-        print("Total: \(total) Temporal: \(temporal)")
+        pulsadoComa = false
     }
     
     func cambiarPuntoComa() {
         var totalString = String(total)
-        let contienePuntoCero = totalString.hasSuffix(".0")
+        let contienePuntoCero = totalString.hasSuffix(Constants.pointZero.rawValue)
         
         if contienePuntoCero {
-            totalString = totalString.replacingOccurrences(of: ".0", with: "")
+            totalString = totalString.replacingOccurrences(of: Constants.pointZero.rawValue, with: "")
             muestraResultado.text = totalString
-            
         } else {
-            
-            totalString = totalString.replacingOccurrences(of: ".", with: ",")
+            totalString = totalString.replacingOccurrences(of: Constants.point.rawValue, with: Constants.colon.rawValue)
             muestraResultado.text = String(totalString)
         }
     }
-
+    
+    func comprobarCeroComa(temporalActual: String, numero: Int) {
+        var temporalActualMod = temporalActual
+        temporalActualMod = temporalActual.replacingOccurrences(of: Constants.colon.rawValue, with: Constants.point.rawValue)
+        
+        if let resultado = Float(temporalActualMod + String(numero)) {
+            temporal = resultado
+            muestraResultado.text = String(resultado).replacingOccurrences(of: Constants.point.rawValue, with: Constants.colon.rawValue)
+        }
+        total = 0
+    }
 }
